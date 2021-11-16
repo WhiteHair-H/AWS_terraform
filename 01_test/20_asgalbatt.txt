@@ -1,0 +1,5 @@
+resource "aws_autoscaling_attachment" "jinwoo-asg" {
+  autoscaling_group_name = aws_autoscaling_group.jinwoo-asgr.id
+  alb_target_group_arn = aws_lb_target_group.jinwoo-lbtg.arn
+  
+}

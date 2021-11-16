@@ -1,0 +1,59 @@
+# subnet01
+resource "aws_subnet" "jinwoo-puba" {
+  vpc_id = aws_vpc.jinwoo_vpc.id
+  cidr_block = "10.0.0.0/24"
+  availability_zone = "ap-northeast-2a"
+  tags = {
+    "Name" = "jinwoo-puba"
+  }
+}
+
+# subnet02
+resource "aws_subnet" "jinwoo-pria" {
+  vpc_id = aws_vpc.jinwoo_vpc.id
+  cidr_block = "10.0.1.0/24"
+  availability_zone = "ap-northeast-2a"
+  tags = {
+    "Name" = "jinwoo-pria"
+  }
+}
+
+# subnet03
+resource "aws_subnet" "jinwoo-pubc" {
+  vpc_id = aws_vpc.jinwoo_vpc.id
+  cidr_block = "10.0.2.0/24"
+  availability_zone = "ap-northeast-2c"
+  tags = {
+    "Name" = "jinwoo-pubc"
+  }
+}
+
+# subnet04
+resource "aws_subnet" "jinwoo-pric" {
+  vpc_id = aws_vpc.jinwoo_vpc.id
+  cidr_block = "10.0.3.0/24"
+  availability_zone = "ap-northeast-2c"
+  tags = {
+    "Name" = "jinwoo-pric"
+  }
+}
+
+# 가용영역 a의 private DB subnet
+resource "aws_subnet" "jinwoo-pridba" {
+  vpc_id = aws_vpc.jinwoo_vpc.id
+  cidr_block = "10.0.4.0/24"
+  availability_zone = "ap-northeast-2a"
+  tags = {
+    "Name" = "jinwoo-pridba"
+  }
+}
+
+# 가용영역 c의 private DB subnet
+resource "aws_subnet" "jinwoo-pridbc" {
+  vpc_id = aws_vpc.jinwoo_vpc.id
+  cidr_block = "10.0.5.0/24"
+  availability_zone = "ap-northeast-2c"
+  tags = {
+    "Name" = "jinwoo-pridbc"
+  }
+}

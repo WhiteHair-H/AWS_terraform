@@ -1,0 +1,6 @@
+resource "aws_lb_target_group_attachment" "jinwoo-albtgatt" {
+  target_group_arn = aws_lb_target_group.jinwoo-lbtg.arn
+  target_id        = aws_instance.jinwoo-web.id
+  port             = 80
+
+}

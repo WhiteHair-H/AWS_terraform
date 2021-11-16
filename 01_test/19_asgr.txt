@@ -1,0 +1,11 @@
+resource "aws_autoscaling_group" "jinwoo-asgr" {
+  name = "jinwoo-terra-test"
+  max_size = 4
+  min_size = 2
+  health_check_grace_period = 10
+  health_check_type = "EC2" # 인스턴스에 대해 체크
+  desired_capacity = 2 # 2개씩 증가
+  force_delete = true # 강제삭제
+  launch_configuration = aws_launch_configuration.jinwoo-aslc.name
+  vpc_zone_identifier = [aws_subnet.jinwoo-puba.id,aws_subnet.jinwoo-pubc.id]
+}

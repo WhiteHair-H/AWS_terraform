@@ -1,0 +1,13 @@
+resource "aws_launch_configuration" "jinwoo-aslc" {
+  name_prefix          = "jinwoo-web-"
+  image_id             = aws_ami_from_instance.jinwoo-ami.id
+  instance_type        = "t2.micro"
+  iam_instance_profile = "admin-role"
+  security_groups      = [aws_security_group.jinwoo-sg.id]
+  key_name             = "jinwoo-key"
+ # user_data = file("./install.sh")
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}

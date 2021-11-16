@@ -1,0 +1,11 @@
+resource "aws_lb" "jinwoo-alb" {
+  name = "jinwoo-alb"
+  internal = false
+  load_balancer_type = "application"
+  security_groups = [aws_security_group.jinwoo-sg.id]
+  subnets = [aws_subnet.jinwoo-pub[0].id,aws_subnet.jinwoo-pub[1].id]
+
+  tags = {
+    "Name" = "jinwoo-alb"
+  }
+}

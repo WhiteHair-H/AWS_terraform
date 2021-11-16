@@ -1,0 +1,9 @@
+resource "aws_route_table_association" "jinwoo-ngass-a" {
+  subnet_id = aws_subnet.jinwoo-pria.id
+  route_table_id = aws_route_table.jinwoo-ngrt.id
+}
+
+resource "aws_route_table_association" "jinwoo-ngass-c" {
+  subnet_id = aws_subnet.jinwoo-pric.id
+  route_table_id = aws_route_table.jinwoo-ngrt.id
+}
